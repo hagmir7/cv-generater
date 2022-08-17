@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('index', [
         'resume' => $resume
     ]);
+
 });
+
+
 
 
 Route::group(['prefix' => 'cv'], function(){
@@ -23,6 +26,7 @@ Route::group(['prefix' => 'cv'], function(){
     Route::get('create/auto', [PersonalController::class, 'autoCreate'])->name('cv.auto.create');
     Route::post('create/update/{id}', [PersonalController::class, 'update'])->name('cv.update');
     Route::get('delete/{id}', [PersonalController::class, 'delete'])->name('cv.delete');
+    Route::get('download/{id}', [PersonalController::class, 'getCv'])->name('cv.download');
 });
 
 

@@ -100,7 +100,7 @@ a{
                 <div class="dropdown-content ">
                     <ul class="p-2 options-list animate__animated animate__flipInX animate__fast">
                         <li><a href="{{ route('cv.create', $cv->slug ) }}" class="text-white">Update</a></li>
-                        <li>Download</li>
+                        <li><a href="{{ route('cv.download', $cv->id )}}" class="text-white">Download</a></li>
                         <li><a href="{{ route('cv.delete', $cv->id )}}" class="text-white" onclick="confirm('Are you sur you want to delete CV...')">Delete</a></li>
                     </ul>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Personal;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -93,4 +94,23 @@ class PersonalController extends Controller
     return redirect('/');
 
     }
+
+
+
+
+    public function getCv($id){
+        $cv = Personal::query()->find($id);
+
+        // return view('pdf', [
+        //     'cv' => $cv
+        // ]);
+
+        // $pdf = Pdf::loadView('pdf', [
+        //     'cv' => $cv
+        // ]);
+        // Pdf::setOption(['dpi' => 150, 'defaultFont' => 'source sans pro']);
+        // return $pdf->download($cv->first_name.'_'.$cv->last_name.'.pdf');
+
+    }
 }
+
